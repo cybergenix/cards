@@ -40,3 +40,7 @@ gem 'spring',        group: :development
 
 # Use bootstrap for styling
 gem 'bootstrap-sass'
+
+# Use Devise for authentication
+gem 'devise'
+gem 'omniauth-facebook'
