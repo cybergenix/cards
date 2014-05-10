@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  note_id: 1
+  card_type_id: 1
+  front: MyText
+  back: MyText
+  due: 2014-05-09 21:46:09
+  position: 1
+  facebook_friend_id: 1
+  user_id: 1
+  average_review_time: 1.5
+  reviews_count: 1
+  lapses_count: 1
+
+two:
+  note_id: 1
+  card_type_id: 1
+  front: MyText
+  back: MyText
+  due: 2014-05-09 21:46:09
+  position: 1
+  facebook_friend_id: 1
+  user_id: 1
+  average_review_time: 1.5
+  reviews_count: 1
+  lapses_count: 1

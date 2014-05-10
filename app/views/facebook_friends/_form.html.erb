@@ -1,0 +1,53 @@
+<%= form_for(@facebook_friend) do |f| %>
+  <% if @facebook_friend.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@facebook_friend.errors.count, "error") %> prohibited this facebook_friend from being saved:</h2>
+
+      <ul>
+      <% @facebook_friend.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :photo %><br>
+    <%= f.text_field :photo %>
+  </div>
+  <div class="field">
+    <%= f.label :work %><br>
+    <%= f.text_field :work %>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br>
+    <%= f.text_field :location %>
+  </div>
+  <div class="field">
+    <%= f.label :birthday %><br>
+    <%= f.text_field :birthday %>
+  </div>
+  <div class="field">
+    <%= f.label :college %><br>
+    <%= f.text_field :college %>
+  </div>
+  <div class="field">
+    <%= f.label :significant_other %><br>
+    <%= f.text_field :significant_other %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :facebook_id %><br>
+    <%= f.number_field :facebook_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

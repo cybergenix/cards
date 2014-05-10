@@ -1,0 +1,37 @@
+<h1>Listing card_reviews</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Card</th>
+      <th>Type</th>
+      <th>Rating</th>
+      <th>Interval</th>
+      <th>Ease</th>
+      <th>Time</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @card_reviews.each do |card_review| %>
+      <tr>
+        <td><%= card_review.user_id %></td>
+        <td><%= card_review.card_id %></td>
+        <td><%= card_review.type %></td>
+        <td><%= card_review.rating %></td>
+        <td><%= card_review.interval %></td>
+        <td><%= card_review.ease %></td>
+        <td><%= card_review.time %></td>
+        <td><%= link_to 'Show', card_review %></td>
+        <td><%= link_to 'Edit', edit_card_review_path(card_review) %></td>
+        <td><%= link_to 'Destroy', card_review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Card review', new_card_review_path %>

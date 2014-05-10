@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @card_type.note_id %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @card_type.title %>
+</p>
+
+<p>
+  <strong>Front template:</strong>
+  <%= @card_type.front_template %>
+</p>
+
+<p>
+  <strong>Back template:</strong>
+  <%= @card_type.back_template %>
+</p>
+
+<p>
+  <strong>Styling:</strong>
+  <%= @card_type.styling %>
+</p>
+
+<%= link_to 'Edit', edit_card_type_path(@card_type) %> |
+<%= link_to 'Back', card_types_path %>

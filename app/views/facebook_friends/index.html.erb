@@ -1,0 +1,41 @@
+<h1>Listing facebook_friends</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Photo</th>
+      <th>Work</th>
+      <th>Location</th>
+      <th>Birthday</th>
+      <th>College</th>
+      <th>Significant other</th>
+      <th>User</th>
+      <th>Facebook</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @facebook_friends.each do |facebook_friend| %>
+      <tr>
+        <td><%= facebook_friend.name %></td>
+        <td><%= facebook_friend.photo %></td>
+        <td><%= facebook_friend.work %></td>
+        <td><%= facebook_friend.location %></td>
+        <td><%= facebook_friend.birthday %></td>
+        <td><%= facebook_friend.college %></td>
+        <td><%= facebook_friend.significant_other %></td>
+        <td><%= facebook_friend.user_id %></td>
+        <td><%= facebook_friend.facebook_id %></td>
+        <td><%= link_to 'Show', facebook_friend %></td>
+        <td><%= link_to 'Edit', edit_facebook_friend_path(facebook_friend) %></td>
+        <td><%= link_to 'Destroy', facebook_friend, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Facebook friend', new_facebook_friend_path %>

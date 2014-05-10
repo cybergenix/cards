@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  note_id: 1
+  title: MyString
+  front_template: MyText
+  back_template: MyText
+  styling: MyText
+
+two:
+  note_id: 1
+  title: MyString
+  front_template: MyText
+  back_template: MyText
+  styling: MyText

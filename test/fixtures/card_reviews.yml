@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  card_id: 1
+  type: 
+  rating: 1
+  interval: 1
+  ease: 1
+  time: 1.5
+
+two:
+  user_id: 1
+  card_id: 1
+  type: 
+  rating: 1
+  interval: 1
+  ease: 1
+  time: 1.5

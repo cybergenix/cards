@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @card_review.user_id %>
+</p>
+
+<p>
+  <strong>Card:</strong>
+  <%= @card_review.card_id %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @card_review.type %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @card_review.rating %>
+</p>
+
+<p>
+  <strong>Interval:</strong>
+  <%= @card_review.interval %>
+</p>
+
+<p>
+  <strong>Ease:</strong>
+  <%= @card_review.ease %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @card_review.time %>
+</p>
+
+<%= link_to 'Edit', edit_card_review_path(@card_review) %> |
+<%= link_to 'Back', card_reviews_path %>

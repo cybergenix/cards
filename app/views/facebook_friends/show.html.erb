@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @facebook_friend.name %>
+</p>
+
+<p>
+  <strong>Photo:</strong>
+  <%= @facebook_friend.photo %>
+</p>
+
+<p>
+  <strong>Work:</strong>
+  <%= @facebook_friend.work %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @facebook_friend.location %>
+</p>
+
+<p>
+  <strong>Birthday:</strong>
+  <%= @facebook_friend.birthday %>
+</p>
+
+<p>
+  <strong>College:</strong>
+  <%= @facebook_friend.college %>
+</p>
+
+<p>
+  <strong>Significant other:</strong>
+  <%= @facebook_friend.significant_other %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @facebook_friend.user_id %>
+</p>
+
+<p>
+  <strong>Facebook:</strong>
+  <%= @facebook_friend.facebook_id %>
+</p>
+
+<%= link_to 'Edit', edit_facebook_friend_path(@facebook_friend) %> |
+<%= link_to 'Back', facebook_friends_path %>

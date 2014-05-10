@@ -1,0 +1,33 @@
+<h1>Listing card_types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Note</th>
+      <th>Title</th>
+      <th>Front template</th>
+      <th>Back template</th>
+      <th>Styling</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @card_types.each do |card_type| %>
+      <tr>
+        <td><%= card_type.note_id %></td>
+        <td><%= card_type.title %></td>
+        <td><%= card_type.front_template %></td>
+        <td><%= card_type.back_template %></td>
+        <td><%= card_type.styling %></td>
+        <td><%= link_to 'Show', card_type %></td>
+        <td><%= link_to 'Edit', edit_card_type_path(card_type) %></td>
+        <td><%= link_to 'Destroy', card_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Card type', new_card_type_path %>

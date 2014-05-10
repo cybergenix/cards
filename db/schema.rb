@@ -11,7 +11,83 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140509173146) do
+ActiveRecord::Schema.define(version: 20140510014826) do
+
+  create_table "card_reviews", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "card_id"
+    t.string   "type"
+    t.integer  "rating"
+    t.integer  "interval"
+    t.integer  "ease"
+    t.float    "time"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "card_reviews", ["card_id"], name: "index_card_reviews_on_card_id"
+  add_index "card_reviews", ["type"], name: "index_card_reviews_on_type"
+  add_index "card_reviews", ["user_id"], name: "index_card_reviews_on_user_id"
+
+  create_table "card_types", force: true do |t|
+    t.integer  "note_id"
+    t.string   "title"
+    t.text     "front_template"
+    t.text     "back_template"
+    t.text     "styling"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "card_types", ["note_id"], name: "index_card_types_on_note_id"
+
+  create_table "cards", force: true do |t|
+    t.integer  "note_id"
+    t.integer  "card_type_id"
+    t.text     "front"
+    t.text     "back"
+    t.datetime "due"
+    t.integer  "position"
+    t.integer  "facebook_friend_id"
+    t.integer  "user_id"
+    t.float    "average_review_time"
+    t.integer  "reviews_count"
+    t.integer  "lapses_count"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "cards", ["card_type_id"], name: "index_cards_on_card_type_id"
+  add_index "cards", ["due"], name: "index_cards_on_due"
+  add_index "cards", ["facebook_friend_id"], name: "index_cards_on_facebook_friend_id"
+  add_index "cards", ["note_id"], name: "index_cards_on_note_id"
+  add_index "cards", ["position"], name: "index_cards_on_position"
+  add_index "cards", ["user_id"], name: "index_cards_on_user_id"
+
+  create_table "facebook_friends", force: true do |t|
+    t.string   "name"
+    t.string   "photo"
+    t.string   "work"
+    t.string   "location"
+    t.string   "birthday"
+    t.string   "college"
+    t.string   "significant_other"
+    t.integer  "user_id"
+    t.integer  "facebook_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "facebook_friends", ["facebook_id"], name: "index_facebook_friends_on_facebook_id"
+  add_index "facebook_friends", ["name"], name: "index_facebook_friends_on_name"
+  add_index "facebook_friends", ["user_id"], name: "index_facebook_friends_on_user_id"
+
+  create_table "notes", force: true do |t|
+    t.string   "title"
+    t.string   "fields"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

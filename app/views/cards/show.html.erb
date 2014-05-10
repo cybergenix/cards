@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @card.note_id %>
+</p>
+
+<p>
+  <strong>Card type:</strong>
+  <%= @card.card_type_id %>
+</p>
+
+<p>
+  <strong>Front:</strong>
+  <%= @card.front %>
+</p>
+
+<p>
+  <strong>Back:</strong>
+  <%= @card.back %>
+</p>
+
+<p>
+  <strong>Due:</strong>
+  <%= @card.due %>
+</p>
+
+<p>
+  <strong>Position:</strong>
+  <%= @card.position %>
+</p>
+
+<p>
+  <strong>Facebook friend:</strong>
+  <%= @card.facebook_friend_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @card.user_id %>
+</p>
+
+<p>
+  <strong>Average review time:</strong>
+  <%= @card.average_review_time %>
+</p>
+
+<p>
+  <strong>Reviews count:</strong>
+  <%= @card.reviews_count %>
+</p>
+
+<p>
+  <strong>Lapses count:</strong>
+  <%= @card.lapses_count %>
+</p>
+
+<%= link_to 'Edit', edit_card_path(@card) %> |
+<%= link_to 'Back', cards_path %>
