@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
 
-  resources :card_reviews
-
   resources :facebook_friends
 
   resources :cards do
-    member { get 'review' }
+    resources :card_reviews do
+      member do
+        patch 'see_back'
+        patch 'set_interval'
+      end
+    end
   end
 
   resources :card_types

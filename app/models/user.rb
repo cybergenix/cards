@@ -9,6 +9,14 @@ class User < ActiveRecord::Base
     Card.generate_cards_for(self)
   end
 
+  def next_card
+    card_backlog.first
+  end
+
+  def card_backlog
+    cards.order('due ASC')
+  end
+
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_create do |user|
       user.provider = auth.provider

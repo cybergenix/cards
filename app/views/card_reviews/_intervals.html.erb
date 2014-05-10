@@ -1,0 +1,5 @@
+<%= form_for @card_review, url: set_interval_card_card_review_path(@card, @card_review) do |f| %>
+  <%= f.submit "10m", class: "btn btn-success" %>
+  <%= f.submit "1d", class: "btn btn-success" %>
+  <%= f.submit "7d", class: "btn btn-success" %>
+<% end %>

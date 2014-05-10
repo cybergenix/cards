@@ -1,3 +1,3 @@
 <div>
-  <%= link_to card.front, review_card_path(card) %>
+  <%= link_to card.front, new_card_card_review_path(card) %> due: <%= card.due.strftime("%D %T") %>
 </div>

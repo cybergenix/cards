@@ -1,5 +1,12 @@
-<h1>New card_review</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', card_reviews_path %>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div id="card-front"><%= @card.front %></div>
+    <hr/>
+    <div id="card-back">???</div>
+  </div>
+  <div id="card-prompt" class="panel-footer">
+    <%= form_for @card_review, url: see_back_card_card_review_path(@card, @card_review), remote: true do |f| %>
+      <%= f.submit "Answer!", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
