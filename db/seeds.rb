@@ -3,5 +3,23 @@
 #
 # Examples:
 #
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+user = User.create(
+  email: "mattangriffel@gmail.com",
+  password: "foobarbaz",
+  provider: "facebook",
+  uid: "10102874318868749"
+)
+
+user.facebook_friends.create(
+  name: "Chris Castiglione",
+  work: "One Month",
+  location: "New York, NY"
+)
+
+user.facebook_friends.create(
+  name: "Mike Tanzer",
+  work: "D G Capital",
+  location: "Princeton, NJ"
+)
+
+user.generate_cards

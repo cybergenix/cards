@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
   resources :facebook_friends
 
-  resources :cards
+  resources :cards do
+    member { get 'review' }
+  end
 
   resources :card_types
 
