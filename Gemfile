@@ -44,3 +44,10 @@ gem 'bootstrap-sass'
 # Use Devise for authentication
 gem 'devise'
 gem 'omniauth-facebook'
+
+gem 'koala', '~> 1.10.0rc2'
+
+group :development do
+  gem "better_errors"
+  gem "binding_of_caller"
+end
