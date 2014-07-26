@@ -1,5 +1,4 @@
 .navbar {
-  @extend .navbar-absolute;
   @extend .navbar-transparent;
 }
 
@@ -24,6 +23,5 @@
 
   .navbar-toggle:hover {
     background-color: transparent;
-
   }
 }
