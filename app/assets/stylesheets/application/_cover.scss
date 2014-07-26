@@ -1,0 +1,22 @@
+.cover-image {
+  @include gradient-radial($inner-color: #3b5998, $outer-color: darken(#3b5998, 10%));
+  color: white;
+  text-align: center;
+  min-height: 100vh;
+
+  .headline {
+    @media (min-width: $screen-md) {
+      font-size: 46px;
+    }
+  }
+}
+
+.cover-content {
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  @media (min-width: $screen-md) {
+    padding-top: 220px;
+    padding-bottom: 160px;
+  }
+}
