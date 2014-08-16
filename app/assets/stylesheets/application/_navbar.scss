@@ -1,0 +1,27 @@
+.navbar {
+  @extend .navbar-transparent;
+}
+
+.navbar-absolute {
+  position: absolute;
+  width: 100%;
+}
+
+.navbar-transparent {
+  @extend .navbar-inverse;
+  background-color: transparent;
+  border: none;
+
+  .navbar-collapse {
+    border: none;
+    box-shadow: none;
+  }
+
+  .navbar-toggle {
+    border: none;
+  }
+
+  .navbar-toggle:hover {
+    background-color: transparent;
+  }
+}
