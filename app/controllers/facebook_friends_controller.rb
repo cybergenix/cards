@@ -1,30 +1,22 @@
 class FacebookFriendsController < ApplicationController
   before_action :set_facebook_friend, only: [:show, :edit, :update, :destroy]
 
-  # GET /facebook_friends
-  # GET /facebook_friends.json
   def index
-    @facebook_friends = FacebookFriend.all
+    @facebook_friends = current_user.facebook_friends.all
   end
 
-  # GET /facebook_friends/1
-  # GET /facebook_friends/1.json
   def show
   end
 
-  # GET /facebook_friends/new
   def new
-    @facebook_friend = FacebookFriend.new
+    @facebook_friend = current_user.facebook_friends.new
   end
 
-  # GET /facebook_friends/1/edit
   def edit
   end
 
-  # POST /facebook_friends
-  # POST /facebook_friends.json
   def create
-    @facebook_friend = FacebookFriend.new(facebook_friend_params)
+    @facebook_friend = current_user.facebook_friends.new(facebook_friend_params)
 
     respond_to do |format|
       if @facebook_friend.save
@@ -37,8 +29,6 @@ class FacebookFriendsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /facebook_friends/1
-  # PATCH/PUT /facebook_friends/1.json
   def update
     respond_to do |format|
       if @facebook_friend.update(facebook_friend_params)
@@ -51,8 +41,6 @@ class FacebookFriendsController < ApplicationController
     end
   end
 
-  # DELETE /facebook_friends/1
-  # DELETE /facebook_friends/1.json
   def destroy
     @facebook_friend.destroy
     respond_to do |format|
@@ -61,10 +49,27 @@ class FacebookFriendsController < ApplicationController
     end
   end
 
+  def destroy_all
+    current_user.facebook_friends.destroy_all
+    respond_to do |format|
+      format.html { redirect_to facebook_friends_url, notice: 'Facebook friends were successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+
+  def import
+    @importer = FacebookFriendImporter.new(current_user)
+    @importer.import
+    respond_to do |format|
+      format.html { redirect_to facebook_friends_url, notice: 'Facebook friends were successfully created.' }
+      format.json { head :no_content }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_facebook_friend
-      @facebook_friend = FacebookFriend.find(params[:id])
+      @facebook_friend = current_user.facebook_friends.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

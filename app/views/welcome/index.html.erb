@@ -12,7 +12,7 @@
       <%= render 'shared/flash' %>
       <h1 class="headline">Facebook Flashcards</h1>
       <p class="lead">Never again forget someone's name or birthday.</p>
-      <p><a class="btn btn-default btn-lg" role="button">Sign up for free</a></p>
+      <p><%= link_to "Sign up for free", signup_path, class: "btn btn-default btn-lg", role: "button" %></p>
     </div>
   </div>
 <% end %>

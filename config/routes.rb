@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
-  resources :facebook_friends
+  resources :facebook_friends do
+    delete :destroy_all, on: :collection
+    post :import, on: :collection
+  end
 
   resources :cards do
     resources :card_reviews do
@@ -16,6 +19,11 @@ Rails.application.routes.draw do
   resources :notes
 
   devise_for :users, controllers: { :omniauth_callbacks => "omniauth_callbacks" }
+  as :user do
+    get "signin" => "devise/sessions#new"
+    delete "signout" => "devise/sessions#destroy"
+    get "signup" => "devise/registrations#new"
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
